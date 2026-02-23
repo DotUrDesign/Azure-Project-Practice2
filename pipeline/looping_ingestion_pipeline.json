@@ -151,7 +151,7 @@
 					},
 					"ifFalseActivities": [
 						{
-							"name": "DeleteEmptyFiles",
+							"name": "DeleteFiles",
 							"type": "Delete",
 							"dependsOn": [],
 							"policy": {
@@ -164,7 +164,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "deleteFiles",
+									"referenceName": "deleteEmptyFiles",
 									"type": "DatasetReference",
 									"parameters": {
 										"container": "bronze",
@@ -178,7 +178,7 @@
 										}
 									}
 								},
-								"enableLogging": false,
+								"enableLogging": true,
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
