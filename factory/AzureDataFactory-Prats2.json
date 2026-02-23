@@ -1,0 +1,9 @@
+{
+	"name": "AzureDataFactory-Prats2",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9a490f46-8928-4c0f-b62c-61866d4cabb6",
+		"tenantId": "ac9e7d1c-bfe9-421d-8e8a-dbe675913197"
+	}
+}
