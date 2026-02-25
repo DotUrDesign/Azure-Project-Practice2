@@ -314,6 +314,34 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Pipeline_success",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-43.uksouth.logic.azure.com:443/workflows/e1cdbbd43b034c3f8c159b471da6d49f/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=7QeSUkxNcUsiw3Ukkv1rEPvEll7vZm7fYGMwPoSMO5M",
+					"body": {
+						"value": "{\n    \"pipeline_name\" : @{pipeline().Pipeline},\n    \"pipeline_runId\" : @{pipeline().RunId}\n}",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
